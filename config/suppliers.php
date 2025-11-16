@@ -96,32 +96,63 @@ return [
             ],
         ],
 
-        'supplier2' => [
-            'name' => 'Supplier 2',
+        'alloy' => [
+            'name' => 'Alloy',
             'enabled' => true,
             'priority' => 3,
-            'model' => \App\Models\Supplier2Product::class,
-            'table' => 'supplier2_products',
+            'model' => \App\Models\AlloyProduct::class,
+            'table' => 'alloy_products',
 
-            // Field mappings for existing supplier2
+            // Field mappings: 'alloy_field' => 'our_field'
             'mappings' => [
-                'sku' => 'supplier_code',
-                'name' => 'name',
-                'shortdescription' => 'short_description',
-                'longdescription' => 'description',
-                'category1' => 'category_name',
-                'costprice' => 'cost_price',
-                'saleprice' => 'retail_price',
-                'quantity' => 'stock_total',
-                'length' => 'length',
-                'width' => 'width',
-                'height' => 'height',
-                'weight' => 'weight',
-                'imagesrc' => 'image_url',
-                'asin' => 'asin',
-                'ean' => 'barcode',
-                'isbn' => 'isbn',
-                'upc' => 'upc',
+                // Identification & Classification
+                'PartNumber' => 'supplier_code',
+                'SupplierPartNumber' => 'supplier_part_number',
+                'CategoryName' => 'category_name',
+                'Category' => 'category_code',
+                'Group' => 'subcategory_name',
+                'Manufacturer' => 'brand_name',
+                'ManufacPrefix' => 'brand_prefix',
+
+                // Product Description
+                'Name' => 'name',
+                'Description' => 'description',
+                'HTMLDescription' => 'description_html',
+                'FeaturesBenefits' => 'features',
+                'MarketingComments' => 'marketing_description',
+                'GeneralComments' => 'general_comments',
+                'EAN' => 'barcode',
+
+                // Pricing
+                'PriceCostEx' => 'cost_price',
+                'PriceRetailEx' => 'retail_price',
+                'TaxType' => 'tax_type',
+                'TaxRate' => 'tax_rate',
+
+                // Physical Specifications
+                'Weight' => 'weight',
+                'Height' => 'height',
+                'Width' => 'width',
+                'Depth' => 'length',
+                'Unit' => 'unit_of_measure',
+
+                // Product Details
+                'Warranty' => 'warranty',
+                'ProductSpecificURL' => 'product_url',
+                'image_thumbnail' => 'image_url',
+                'PDF_Available' => 'pdf_available',
+
+                // Stock Levels
+                'Quantity' => 'stock_total',
+                'Qty_ADL' => 'stock_warehouse_adl',
+                'Qty_BNE' => 'stock_warehouse_bne',
+                'Qty_MEL' => 'stock_warehouse_mel',
+                'Qty_SYD' => 'stock_warehouse_syd',
+
+                // ETA & Updates
+                'ETADate' => 'eta_date',
+                'ETAStatus' => 'eta_status',
+                'StockRecordUpdated' => 'last_updated',
             ],
         ],
     ],
